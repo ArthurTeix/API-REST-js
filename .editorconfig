@@ -1,0 +1,12 @@
+# top-most EditorConfig file
+
+# Para IDE trabalhar igual em todos os sistemas operacionais, independente do sistema operacional que o desenvolvedor esteja utilizando, é necessário criar um arquivo chamado .editorconfig na raiz do projeto. Este arquivo deve conter as configurações de formatação de código que serão aplicadas a todos os arquivos do projeto.
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = false
+insert_final_newline = false
