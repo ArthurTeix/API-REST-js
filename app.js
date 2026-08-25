@@ -8,9 +8,11 @@ class App {
   }
 
   middlewares() {
-    this.app.use(express.urlencoded({ extended: true }))
-    this.app.use(express.json())
+    this.app.use(express.urlencoded({ extended: true }));
+    this.app.use(express.json());
   }
 
   routes() {}
 }
+
+export default new App().app; // exportando default o express
