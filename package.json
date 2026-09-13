@@ -27,6 +27,7 @@
     "sucrase": "^3.35.1"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "express": "^5.2.1"
   }
 }
