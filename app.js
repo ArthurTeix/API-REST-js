@@ -2,6 +2,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+import "./src/database"; // executando arquivo automaticamente para garantir os dados
+
 import express from "express";
 import homeRoutes from "./src/routes/homeRoutes";
 
