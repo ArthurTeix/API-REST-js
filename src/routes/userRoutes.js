@@ -10,5 +10,6 @@ router.get("/:id", userController.show);
 
 router.put("/:id", userController.update);
 
-export default router;
+router.delete("/:id", userController.delete);
 
+export default router;
