@@ -9,11 +9,11 @@ export default router;
 
 /*
       MÉTODOS NOS CONTROLLERS
-index -> usado para listar todos os usuários = GET
 store/create -> criar novos usuários = POST
-delete -> apaga o usuário = DELETE
+index -> usado para listar todos os usuários = GET
 show -> mostra um usuário = GET
 update -> atualiza um usuário = PUT ou PATCH
+delete -> apaga o usuário = DELETE
 
 PUT: substitui o objeto inteiro
 PATCH: substitui apenas um valor
