@@ -6,7 +6,9 @@ class UserController {
       const novoUser = await User.create(req.body);
       return res.json(novoUser);
     } catch (e) {
-      return res.status(400).json({ errors: e.errors.map((err) => err.message) });
+      return res
+        .status(400)
+        .json({ errors: e.errors.map((err) => err.message) });
     }
   }
 
@@ -21,6 +23,15 @@ class UserController {
   }
 
   // Show
+  async show(req, res) {
+    try {
+      // id do user que quero acessar
+      const user = await User.findByPk(req.params.id);
+      return res.json(user);
+    } catch {
+      return res.json(null);
+    }
+  }
 
   // Update
 
