@@ -4,6 +4,7 @@ import userController from "../controllers/UserController"; // import com letra 
 const router = new Router();
 
 router.post("/", userController.store);
+router.get("/", userController.index);
 
 export default router;
 
