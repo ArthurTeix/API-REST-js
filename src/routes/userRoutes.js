@@ -5,6 +5,7 @@ import loginRequired from "../middlewares/loginRequired";
 const router = new Router();
 
 // Não existiriam numa aplicação real, apenas fiz para o CRUD
+// Para manter devo manter apenas id, nome e email
 router.get("/", loginRequired, userController.index); // Lista todos
 router.get("/:id", userController.show); // Lista apenas um
 

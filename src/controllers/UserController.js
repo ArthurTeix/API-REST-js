@@ -15,9 +15,7 @@ class UserController {
   async index(req, res) {
     try {
       // Busca todos os usuários e me retorna em json
-      const users = await User.findAll();
-      console.log("USER ID: ", req.userId);
-      console.log("USER E-MAIL: ", req.userEmail);
+      const users = await User.findAll({ attributes: ["id", "nome", "email"] });
       return res.json(users);
     } catch {
       return res.json(null);
@@ -27,7 +25,7 @@ class UserController {
   async show(req, res) {
     try {
       // id do user que quero acessar
-      const user = await User.findByPk(req.params.id);
+      const user = await User.findByPk(req.params.id, { attributes: ["id", "nome", "email"] });
       return res.json(user);
     } catch {
       return res.json(null);
