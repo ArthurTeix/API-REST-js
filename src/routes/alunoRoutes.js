@@ -6,11 +6,11 @@ const router = new Router();
 router.post("/", alunoController.store);
 
 router.get("/", alunoController.index);
-router.get("/", alunoController.show);
+router.get("/:id", alunoController.show);
 
-router.put("/", alunoController.update);
+router.put("/:id", alunoController.update);
 
-router.delete("/", alunoController.delete);
+router.delete("/:id", alunoController.delete);
 
 export default router;
 
