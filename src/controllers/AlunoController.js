@@ -1,6 +1,18 @@
 import Aluno from "../models/Aluno";
 
 class AlunoController {
+  async store(req, res) {
+    try {
+      const aluno = Aluno.create(req.body)
+
+      return res.json(aluno)
+    } catch (e) {
+      return res.status(400).json({
+        errors: e.errors.message((err) => err.message),
+      });
+    }
+  }
+
   async show(req, res) {
     try {
       const { id } = req.params;
@@ -23,7 +35,6 @@ class AlunoController {
         attributes: ["id", "nome", "idade", "email", "idade", "peso", "altura"],
       });
     } catch (e) {
-      console.log(e);
       return res.status(400).json({
         errors: e.errors.message((err) => err.message),
       });
@@ -36,13 +47,6 @@ class AlunoController {
       return res.json(alunos);
     } catch {
       return res.json(null);
-    }
-  }
-
-  async store(req, res) {
-    try {
-    } catch (e) {
-      console.log(e);
     }
   }
 
@@ -70,7 +74,6 @@ class AlunoController {
         attributes: ["id", "nome", "idade", "email", "idade", "peso", "altura"],
       });
     } catch (e) {
-      console.log(e);
       return res.status(400).json({
         errors: e.errors.message((err) => err.message),
       });
@@ -98,7 +101,6 @@ class AlunoController {
       await aluno.destroy();
       return res.json("Aluno deletedo com sucesso!");
     } catch (e) {
-      console.log(e);
       return res.status(400).json({
         errors: e.errors.message((err) => err.message),
       });
