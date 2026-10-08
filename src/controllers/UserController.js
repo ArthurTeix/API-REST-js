@@ -68,7 +68,7 @@ class UserController {
 
       await user.destroy();
 
-      return res.json("Deletado com sucesso.");
+      return res.json("User deletado com sucesso.");
     } catch (e) {
       return res
         .status(400)
