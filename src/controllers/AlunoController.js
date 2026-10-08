@@ -48,8 +48,32 @@ class AlunoController {
 
   async update(req, res) {
     try {
+      const { id } = req.params;
+
+      if (!id) {
+        return res.status(400).json({
+          errors: ["ID não enviado."],
+        });
+      }
+
+      const aluno = await Aluno.findByPk(id);
+
+      if (!aluno) {
+        return res.status(400).json({
+          errors: ["Aluno não existente."],
+        });
+      }
+
+      const alunoPut = aluno.update(req.body);
+
+      return res.json(alunoPut, {
+        attributes: ["id", "nome", "idade", "email", "idade", "peso", "altura"],
+      });
     } catch (e) {
       console.log(e);
+      return res.status(400).json({
+        errors: e.errors.message((err) => err.message),
+      });
     }
   }
 
