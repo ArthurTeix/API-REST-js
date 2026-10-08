@@ -54,7 +54,31 @@ class AlunoController {
   }
 
   async delete(req, res) {
-    
+    try {
+      const { id } = req.params;
+
+      if (!id) {
+        return res.status(400).json({
+          errors: ["ID não enviado."],
+        });
+      }
+
+      const aluno = await Aluno.findByPk(id);
+
+      if (!aluno) {
+        return res.status(400).json({
+          errors: ["Aluno não existente."],
+        });
+      }
+
+      await aluno.destroy();
+      return res.json("Aluno deletedo com sucesso!");
+    } catch (e) {
+      console.log(e);
+      return res.status(400).json({
+        errors: e.errors.message((err) => err.message),
+      });
+    }
   }
 }
 
