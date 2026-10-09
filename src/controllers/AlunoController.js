@@ -3,12 +3,12 @@ import Aluno from "../models/Aluno";
 class AlunoController {
   async store(req, res) {
     try {
-      const aluno = Aluno.create(req.body);
+      const aluno = await Aluno.create(req.body);
 
       return res.json(aluno);
     } catch (e) {
       return res.status(400).json({
-        errors: e.errors.message((err) => err.message),
+        errors: e.errors.map((err) => err.message),
       });
     }
   }
@@ -44,7 +44,7 @@ class AlunoController {
       return res.json(aluno);
     } catch (e) {
       return res.status(400).json({
-        errors: e.errors.message((err) => err.message),
+        errors: e.errors.map((err) => err.message),
       });
     }
   }
@@ -86,7 +86,7 @@ class AlunoController {
         });
       }
 
-      const alunoPut = aluno.update(req.body, {
+      const alunoPut = await aluno.update(req.body, {
         attributes: [
           "id",
           "nome",
@@ -101,7 +101,7 @@ class AlunoController {
       return res.json(alunoPut);
     } catch (e) {
       return res.status(400).json({
-        errors: e.errors.message((err) => err.message),
+        errors: e.errors.map((err) => err.message),
       });
     }
   }
@@ -128,7 +128,7 @@ class AlunoController {
       return res.json("Aluno deletedo com sucesso!");
     } catch (e) {
       return res.status(400).json({
-        errors: e.errors.message((err) => err.message),
+        errors: e.errors.map((err) => err.message),
       });
     }
   }
