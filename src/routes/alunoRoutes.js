@@ -14,4 +14,3 @@ router.put("/:id", loginRequired, alunoController.update);
 router.delete("/:id", loginRequired, alunoController.delete);
 
 export default router;
-
