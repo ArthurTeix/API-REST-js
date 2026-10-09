@@ -23,7 +23,7 @@ class AlunoController {
         });
       }
 
-      const aluno = await Aluno.findByPk(id);
+      const aluno = await Aluno.findByPk(id, { attributes: ["id", "nome", "sobrenome", "email", "idade", "peso", "altura"] });
 
       if (!aluno) {
         return res.status(400).json({
@@ -31,9 +31,7 @@ class AlunoController {
         });
       }
 
-      return res.json(aluno, {
-        attributes: ["id", "nome", "idade", "email", "idade", "peso", "altura"],
-      });
+      return res.json(aluno);
     } catch (e) {
       return res.status(400).json({
         errors: e.errors.message((err) => err.message),
@@ -43,7 +41,7 @@ class AlunoController {
 
   async index(req, res) {
     try {
-      const alunos = await Aluno.findAll();
+      const alunos = await Aluno.findAll({ attributes: ["id", "nome", "sobrenome", "email", "idade", "peso", "altura"] });
       return res.json(alunos);
     } catch {
       return res.json(null);
@@ -68,11 +66,9 @@ class AlunoController {
         });
       }
 
-      const alunoPut = aluno.update(req.body);
+      const alunoPut = aluno.update(req.body, { attributes: ["id", "nome", "sobrenome", "email", "idade", "peso", "altura"] });
 
-      return res.json(alunoPut, {
-        attributes: ["id", "nome", "idade", "email", "idade", "peso", "altura"],
-      });
+      return res.json(alunoPut);
     } catch (e) {
       return res.status(400).json({
         errors: e.errors.message((err) => err.message),
