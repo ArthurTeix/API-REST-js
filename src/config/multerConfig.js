@@ -7,7 +7,7 @@ export default {
       return cb(new multer.MulterError("Arquivo precisa ser PNG ou JPG."));
     }
 
-    return (null, true);
+    return cb(null, true);
   },
 
   storage: multer.diskStorage({
