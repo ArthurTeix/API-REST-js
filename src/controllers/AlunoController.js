@@ -3,9 +3,9 @@ import Aluno from "../models/Aluno";
 class AlunoController {
   async store(req, res) {
     try {
-      const aluno = Aluno.create(req.body)
+      const aluno = Aluno.create(req.body);
 
-      return res.json(aluno)
+      return res.json(aluno);
     } catch (e) {
       return res.status(400).json({
         errors: e.errors.message((err) => err.message),
@@ -23,7 +23,17 @@ class AlunoController {
         });
       }
 
-      const aluno = await Aluno.findByPk(id, { attributes: ["id", "nome", "sobrenome", "email", "idade", "peso", "altura"] });
+      const aluno = await Aluno.findByPk(id, {
+        attributes: [
+          "id",
+          "nome",
+          "sobrenome",
+          "email",
+          "idade",
+          "peso",
+          "altura",
+        ],
+      });
 
       if (!aluno) {
         return res.status(400).json({
@@ -41,7 +51,17 @@ class AlunoController {
 
   async index(req, res) {
     try {
-      const alunos = await Aluno.findAll({ attributes: ["id", "nome", "sobrenome", "email", "idade", "peso", "altura"] });
+      const alunos = await Aluno.findAll({
+        attributes: [
+          "id",
+          "nome",
+          "sobrenome",
+          "email",
+          "idade",
+          "peso",
+          "altura",
+        ],
+      });
       return res.json(alunos);
     } catch {
       return res.json(null);
@@ -66,7 +86,17 @@ class AlunoController {
         });
       }
 
-      const alunoPut = aluno.update(req.body, { attributes: ["id", "nome", "sobrenome", "email", "idade", "peso", "altura"] });
+      const alunoPut = aluno.update(req.body, {
+        attributes: [
+          "id",
+          "nome",
+          "sobrenome",
+          "email",
+          "idade",
+          "peso",
+          "altura",
+        ],
+      });
 
       return res.json(alunoPut);
     } catch (e) {
