@@ -1,5 +1,5 @@
 import { Router } from "express";
-import fotoController from "../controllers/HomeController";
+import fotoController from "../controllers/FotoController";
 
 const router = new Router();
 
