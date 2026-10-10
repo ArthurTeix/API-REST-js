@@ -1,4 +1,5 @@
 import Aluno from "../models/Aluno";
+import Foto from "../models/Foto";
 
 class AlunoController {
   async store(req, res) {
@@ -33,6 +34,10 @@ class AlunoController {
           "peso",
           "altura",
         ],
+        include: {
+          model: Foto,
+          attributes: ["originalname"],
+        },
       });
 
       if (!aluno) {
@@ -61,6 +66,11 @@ class AlunoController {
           "peso",
           "altura",
         ],
+        order: [["id", "DESC"]], // DESC: decrescente | ASC: crescente
+        include: {
+          model: Foto,
+          attributes: ["originalname"],
+        },
       });
       return res.json(alunos);
     } catch {
