@@ -439,4 +439,4 @@ Também serve como base para um futuro front-end (por exemplo, em React) que con
 
 Desenvolvido por **Arthur Teixeira**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ArthurTeix?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/arthurteix/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ArthurTeix-0A66C2)](https://www.linkedin.com/in/arthurteix/)
