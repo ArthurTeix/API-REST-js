@@ -171,7 +171,7 @@ curl -X POST http://localhost:3001/fotos \
 escola-APIREST/
 │
 ├── docs/
-│   └── images/             # Capturas de tela usadas no README
+│   └── images/
 │
 ├── src/
 │   ├── config/
@@ -200,10 +200,10 @@ escola-APIREST/
 │       ├── tokenRoutes.js
 │       └── userRoutes.js
 │
-├── uploads/                # Fotos enviadas pelos usuários
+├── uploads/
 │
 ├── .editorconfig
-├── .env                    # Não vai para o Git
+├── .env
 ├── .gitignore
 ├── .sequelizerc
 ├── app.js
@@ -357,8 +357,6 @@ TOKEN_EXPIRATION=7d
 
 Substitua os valores pelos dados da sua configuração do MySQL.
 
-> ⚠️ Nunca envie o `.env` para o GitHub. Use um `TOKEN_SECRET` longo e imprevisível.
-
 ### 6. Crie a pasta de uploads (caso não exista)
 ```bash
 mkdir uploads
@@ -434,18 +432,6 @@ Este projeto foi desenvolvido principalmente como forma de praticar e consolidar
 
 Também serve como base para um futuro front-end (por exemplo, em React) que consuma esta API, funcionando como uma etapa importante na minha evolução como desenvolvedor.
 
----
-
-## 🛣️ Futuras Melhorias
-
-- [ ] 🖼️ Servir as imagens da pasta `uploads/` como arquivos estáticos e retornar a URL da foto na API
-- [ ] 📏 Limitar o tamanho dos uploads
-- [ ] 🛡️ Adicionar `helmet`, `cors` e limite de requisições (*rate limit*)
-- [ ] ⚙️ Mover a porta do servidor para o `.env`
-- [ ] 🧪 Criar testes automatizados
-- [ ] 📘 Documentar a API com Swagger/OpenAPI
-- [ ] 🚀 Fazer o deploy da API na nuvem
-- [ ] 🌐 Criar o front-end em React para consumir a API
 
 ---
 
@@ -453,4 +439,4 @@ Também serve como base para um futuro front-end (por exemplo, em React) que con
 
 Desenvolvido por **Arthur Teixeira**
 
-[![GitHub](https://img.shields.io/badge/GitHub-ArthurTeix-181717?logo=github)](https://github.com/ArthurTeix)
+[LinkedIn](https://www.linkedin.com/in/arthurteix/)
