@@ -6,8 +6,8 @@ const router = new Router();
 
 router.post("/", loginRequired, alunoController.store);
 
-router.get("/", alunoController.index);
-router.get("/:id", alunoController.show);
+router.get("/", loginRequired, alunoController.index);
+router.get("/:id", loginRequired, alunoController.show);
 
 router.put("/:id", loginRequired, alunoController.update);
 
